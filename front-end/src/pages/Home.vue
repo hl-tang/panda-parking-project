@@ -1,4 +1,5 @@
 <script setup>
+import EyeOffIcon from 'vue-material-design-icons/EyeOff.vue';
 </script>
 
 <template>
@@ -9,6 +10,8 @@
       login
     </v-btn>
   </router-link>
+
+  <eye-off-icon fillColor="#FF0000" :size="24"/>
 </template>
 
 <style scoped></style>
