@@ -7,31 +7,46 @@ const UserModel = require('../../../models/UserModel');
 var QRCode = require('qrcode')
 
 router.post('/login', function(req, res, next){
+    console.log(req.body);
     let loginname = req.body.loginname;
     let pwd = req.body.password;
-  
-    OwnerModel.findOne({loginname: loginname}).then(function(ownerUser){
-      if(!ownerUser){
-        res.json({
-          result: "False",
-          msg: "ユーザが存在しない"
-        });
-      }
-  
-      if(ownerUser.pwd === sha1(pwd)){
-        res.json({
-          result: "True",
-          msg: "ログインしました",
-          owner_id: ownerUser._id
-        })
-      }else{
-        res.json({
-          result: "False",
-          msg: "パスワードが間違った"
-        })
-      }
-    }).catch(next)
-  })
+
+    OwnerModel.findOne({loginname: loginname}).then(async function(ownerUser){
+        if(!ownerUser){
+            return res.json({
+                result: "False",
+                msg: "ユーザが存在しない"
+            });
+        }
+
+        if(ownerUser.pwd === sha1(pwd)){
+            try {
+                var populatedOwnerUser = await OwnerModel.findById(ownerUser._id)
+                    .populate('parking_lot_list')
+                    .populate('user_list')
+                    .exec();
+
+                num_of_parking_lots = populatedOwnerUser.parking_lot_list.length;
+                num_of_users = populatedOwnerUser.user_list.length;
+                res.json({
+                    result: "True",
+                    msg: "ログインしました",
+                    ownerUser: populatedOwnerUser,
+                    num_of_parking_lots : num_of_parking_lots,
+                    num_of_users : num_of_users
+                });
+            } catch (error) {
+                next(error);
+            }
+        }else{
+            res.json({
+                result: "False",
+                msg: "パスワードが間違った"
+            });
+        }
+    }).catch(next);
+});
+
 
   //parking_lotの追加
   router.post('/:owner_id/parking_lots/create', (req, res, next) => {

@@ -15,9 +15,9 @@ export default {
       // Home.vueへ遷移
       this.$router.push("/")
 
-      axios.post('127.0.0.1:8010/api/owner/login', {
-        "loginname": userId,
-        "password": password
+      axios.post('http://127.0.0.1:8010/api/owner/login', {
+        "loginname": this.userId,
+        "password": this.password
       }).then(res => {
         // console.log(2)
         console.log("Response Data:", res.data);
