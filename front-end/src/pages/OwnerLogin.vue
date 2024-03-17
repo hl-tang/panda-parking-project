@@ -13,7 +13,7 @@ export default {
     login() {
       // this.$store.dispatch("login", {name: this.name, password: this.password})
       // Home.vueへ遷移
-      this.$router.push("/")
+      this.$router.push("/owner")
 
       axios.post('http://127.0.0.1:8010/api/owner/login', {
         "loginname": this.userId,
