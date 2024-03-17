@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import Home from "../pages/Home.vue";
 import Login from "../pages/Login.vue";
-import Chief from "../pages/Chief.vue";
+import OwnerHP from "../pages/OwnerHP.vue";
 import OwnerList from "../pages/OwnerList.vue";
 import EchartDemo from "../pages/EchartDemo.vue";
 import Play from "../pages/Play.vue";
@@ -19,12 +19,12 @@ const routes = [
     component: Login,
   },
   {
-    path: "/chief",
-    name: "Chief",
-    component: Chief,
+    path: "/owner",
+    name: "OwnerHP",
+    component: OwnerHP,
   },
   {
-    path: "/chief/ownerlist",
+    path: "/owner/ownerlist",
     name: "OwnerList",
     component: OwnerList,
   },

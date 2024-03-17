@@ -1,12 +1,16 @@
 <script setup>
-import ChiefSideBar from '../components/ChiefSideBar.vue';
+import OwnerSideBar from '../components/OwnerSideBar.vue';
+import TopBar from '../components/TopBar.vue';
 
 </script>
 
 <template>
+ 
+  <!-- <TopBar /> -->
+  <!-- 导入topbar后sidebar的router不灵了 -->
   <div class="flex h-screen">
     <!-- Sidebar -->
-    <ChiefSideBar />
+    <OwnerSideBar />
 
     <!-- Main Content -->
     <div class="flex-1">

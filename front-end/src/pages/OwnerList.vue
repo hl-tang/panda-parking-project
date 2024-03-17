@@ -1,5 +1,5 @@
 <script setup>
-import ChiefSideBar from '../components/ChiefSideBar.vue';
+import OwnerSideBar from '../components/OwnerSideBar.vue';
 
 
 import { ref } from 'vue'
@@ -107,7 +107,7 @@ const desserts = [
 <template>
   <div class="flex h-screen">
     <!-- Sidebar -->
-    <ChiefSideBar />
+    <OwnerSideBar />
 
     <!-- Main Content -->
     <div class="flex-1">
@@ -116,27 +116,14 @@ const desserts = [
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
       </div> -->
 
-      <v-card
-    title="Nutrition"
-    flat
-  >
-    <template v-slot:text>
-      <v-text-field
-        v-model="search"
-        label="Search"
-        prepend-inner-icon="mdi-magnify"
-        variant="outlined"
-        hide-details
-        single-line
-      ></v-text-field>
-    </template>
+      <v-card title="Nutrition" flat>
+        <template v-slot:text>
+          <v-text-field v-model="search" label="Search" prepend-inner-icon="mdi-magnify" variant="outlined" hide-details
+            single-line></v-text-field>
+        </template>
 
-    <v-data-table
-      :headers="headers"
-      :items="desserts"
-      :search="search"
-    ></v-data-table>
-  </v-card>
+        <v-data-table :headers="headers" :items="desserts" :search="search"></v-data-table>
+      </v-card>
     </div>
   </div>
 
