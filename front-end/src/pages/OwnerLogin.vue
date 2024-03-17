@@ -14,7 +14,7 @@ export default{
     },
     changeUser(){
       // User.vueへ遷移
-      this.$router.push("/owner/index")
+      this.$router.push("/owner")
     },
     back(){
       // Home.vueへ遷移
