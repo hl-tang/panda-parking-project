@@ -1,8 +1,9 @@
 # panda-parking-project
-![image](https://github.com/taizogt/panda-parking-project/assets/131645131/40e65085-c949-4530-9e81-12c2c5392cc5)
+![image](https://github.com/taizogt/panda-parking-project/assets/131645131/c767c450-f123-4003-8d6a-90269ad30d07)
+
 
 ## 概要
-2024.3.16-3.17 の 2 日間で開催された Track Jobs 主催のハッカソンイベント．
+2024.3.16-3.17 の 2 日間で開催された Track Job 主催のハッカソンイベント．
 
 本チームは，Vue.js + Node.js を用いた Web アプリケーションを開発．
 
