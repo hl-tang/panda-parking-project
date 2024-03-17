@@ -5,6 +5,7 @@ import UserLogin from "../pages/UserLogin.vue";
 import OwnerLogin from "../pages/OwnerLogin.vue";
 import Chief from "../pages/Chief.vue";
 import OwnerList from "../pages/OwnerList.vue";
+import Statistics from "../pages/Statistics.vue";
 import EchartDemo from "../pages/EchartDemo.vue";
 import Play from "../pages/Play.vue";
 import User from "../pages/User.vue";
@@ -34,6 +35,11 @@ const routes = [
     path: "/chief/ownerlist",
     name: "OwnerList",
     component: OwnerList,
+  },
+  {
+    path: "/owner/statistics",
+    name: "Statistics",
+    component: Statistics,
   },
   {
     path: "/demo",

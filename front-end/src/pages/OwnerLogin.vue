@@ -1,5 +1,4 @@
 <script>
-import EyeOffIcon from 'vue-material-design-icons/EyeOff.vue';
 
 export default{
   name: "Login",
@@ -37,7 +36,7 @@ export default{
           v-model="userId" 
         >
           <template v-slot:prepend>
-            <img width="24" src="/account.svg"/>
+            <img width="24" src="/account-tie.svg"/>
           </template>
         </v-text-field>
         <v-text-field
