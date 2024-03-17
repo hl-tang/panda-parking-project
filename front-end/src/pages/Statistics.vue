@@ -1,5 +1,5 @@
 <script setup>
-import ChiefSideBar from '../components/ChiefSideBar.vue';
+import OwnerSideBar from '../components/OwnerSideBar.vue';
 
 </script>
 <script>
@@ -12,7 +12,7 @@ export default {
   },
   data() {
     return {
-			apidata: null,
+		apidata: null,
 			socket: "",
       user_rates: [
         { parking_lot_name: '駐輪場A', value: 100 },
@@ -69,7 +69,7 @@ export default {
 <template>
 	<div class="flex h-screen">
     <!-- Sidebar -->
-    <ChiefSideBar />
+    <OwnerSideBar />
 
     <!-- Main Content -->
     <div class="flex-1">

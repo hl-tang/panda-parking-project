@@ -16,7 +16,7 @@
         <router-link to="/owner/ownerlist" >駐車所リスト一覧</router-link>
       </li>
       <li class="px-4 py-2 hover:bg-indigo-700 focus:bg-indigo-700">
-        <router-link to="/owner" >売上確認</router-link>
+        <router-link to="/owner/statistics" >売上確認</router-link>
       </li>
       
     </ul>

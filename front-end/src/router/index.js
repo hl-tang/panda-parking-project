@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 import Home from "../pages/Home.vue";
-import Login from "../pages/Login.vue";
+import UserLogin from "../pages/UserLogin.vue";
+import OwnerLogin from "../pages/OwnerLogin.vue";
 import OwnerHP from "../pages/OwnerHP.vue";
 import OwnerList from "../pages/OwnerList.vue";
 import Statistics from "../pages/Statistics.vue";
