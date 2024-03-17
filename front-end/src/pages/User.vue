@@ -2,12 +2,15 @@
 import { ref } from 'vue';
 export default {
   setup() {
-    const test = ref('UserA');
+    const test = ref('ユーザ0001');
     return { test };
   },
   methods: {
     logout() {
       this.$router.push('/');
+    },
+    toUserDetail() {
+      this.$router.push('/user/detail');
     },
   },
 };
@@ -20,7 +23,7 @@ export default {
       <div class="mx-auto" style="font-size: xx-large; margin-top: 12px;">HOME</div>
       <v-container clasS="ml-n20">
         <v-row>
-          <div style="margin: 10px 40px 0 0;">ユーザー {{ this.test }}</div>            
+          <div style="margin: 10px 40px 0 0;">ユーザー： {{ this.test }}</div>            
         </v-row>
         <v-row>
           <v-btn class="bg" @click="logout" rounded="xl" style="height: 28px">ログアウト</v-btn>
@@ -31,7 +34,7 @@ export default {
       <v-container style="max-width: 650px;">
         <v-row>
           <v-col>
-            <v-card class="v-card-size1">
+            <v-card class="v-card-size1" @click="toUserDetail">
               <v-card-title>ユーザー情報</v-card-title>
               <v-card-text>
                 お客様の登録情報を確認できます．

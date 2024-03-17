@@ -1,5 +1,5 @@
 <template>
-  <div ref="chart" style="width: 400px; height: 300px;"></div>
+  <div ref="chart" style="width: 600px; height: 300px;"></div>
 </template>
 
 <script>
@@ -25,7 +25,12 @@ export default {
       const option = {
         xAxis: {
           type: 'category',
-          data: this.data.map(item => item.parking_lot_name)
+          data: this.data.map(item => item.parking_lot_name),
+          axisLabel:{
+            rotate: 315,
+            interval: 0,
+            fontSize: 10
+          }
         },
         yAxis: {
           type: 'value',

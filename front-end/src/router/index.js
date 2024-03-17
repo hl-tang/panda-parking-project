@@ -9,6 +9,7 @@ import Statistics from "../pages/Statistics.vue";
 import EchartDemo from "../pages/EchartDemo.vue";
 import Play from "../pages/Play.vue";
 import User from "../pages/User.vue";
+import UserDetail from "../pages/UserDetail.vue";
 
 const routes = [
   {
@@ -53,6 +54,10 @@ const routes = [
   {
     path: "/user/index",
     component: User,
+  },
+  {
+    path: "/user/detail",
+    component: UserDetail,
   },
 ];
 

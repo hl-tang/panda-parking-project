@@ -1,4 +1,5 @@
 <script>
+import axios from 'axios';
 
 export default{
   name: "Login",
@@ -9,12 +10,28 @@ export default{
     password: ""
   }),
   methods: {
-    login(){
-      this.$store.dispatch("login", {name: this.name, password: this.password})
+    async login(){
+      // apiを叩く
+      try {
+        const response = await axios.post("http://localhost:8010/api/owner/login", {
+          userId: this.userId,
+          password: this.password
+        });
+        console.log(response);
+        // ログイン成功
+        if(response.data.result === "True"){
+          // オーナー画面へ遷移
+          this.changeUser();
+        }
+      } catch (error) {
+        console.log(error);
+        console.log("ログイン失敗");
+        this.changeUser();
+      }
     },
     changeUser(){
-      // User.vueへ遷移
-      this.$router.push("/owner/index")
+      // owner.vueへ遷移
+      this.$router.push("/owner")
     },
     back(){
       // Home.vueへ遷移
