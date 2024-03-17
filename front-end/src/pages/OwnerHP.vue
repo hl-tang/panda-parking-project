@@ -25,7 +25,7 @@ import TopBar from '../components/TopBar.vue';
           <!-- Image -->
           <img src="../assets/parking_pic.png" alt="Icon" class="w-36 h-36 mb-4">
           <!-- Text -->
-          <p class="text-lg font-semibold">駐車所数：4</p>
+          <p class="text-lg font-semibold">駐車場数：4</p>
         </div>
       </div>
 
@@ -36,7 +36,7 @@ import TopBar from '../components/TopBar.vue';
           <!-- Image -->
           <img src="../assets/user_pic.png" alt="Icon" class="w-36 h-36 mb-4">
           <!-- Text -->
-          <p class="text-lg font-semibold">用户数：500</p>
+          <p class="text-lg font-semibold">ユーザ数：500</p>
         </div>
       </div>
     </div>
