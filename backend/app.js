@@ -3,24 +3,36 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const cors = require('cors');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var adminIndexRouter = require('./routes/api/admin/index');
+var ownerIndexRouter = require('./routes/api/owner/index');
+var userIndexRouter = require('./routes/api/user/index');
 
 var app = express();
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+// // view engine setup
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors({
+  origin: 'http://localhost:5173',
+  credentials: true,
+  optionsSuccessStatus: 200
+}))
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/api/admin', adminIndexRouter);
+app.use('/api/owner', ownerIndexRouter);
+app.use('/api/user', userIndexRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
